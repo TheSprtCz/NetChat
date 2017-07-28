@@ -53,6 +53,11 @@ public class PMCommand extends Command {
             values.put("sender", "me");
      
             NetMain.sendMessage(sender, SubstitutorUtil.constructMessage(Templates.PM, values, message));
+
+            values.put("receiver", receiver.getName());
+            values.put("sender", sender.getName());
+
+            main.getLogger().info(SubstitutorUtil.constructMessage(Templates.PM, values, message).getText());
         }
     }
 
